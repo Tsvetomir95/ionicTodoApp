@@ -1,0 +1,32 @@
+ion-toolbar {
+    --background: #FDCB01;
+    --color: white;
+}
+
+ion-content {
+    --background: url("https://cdn.pixabay.com/photo/2016/11/01/18/38/background-1789175_960_720.png");
+    --background-size: cover;
+    background-repeat: no-repeat;
+}
+
+ion-item {
+    border-radius: 10px;
+    margin-top: 20px ;
+    --background: #fdcb01;
+}
+
+
+form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form > ion-button {
+    margin-top: 40px;
+    --color: white;
+   --background: #f60261;
+   --with: 4rem;
+}
+

@@ -1,0 +1,32 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Create Task
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="todoForm" >
+    <ion-item>
+      <ion-label color="dark" position="floating">Write your task here!</ion-label>
+      <ion-textarea formControlName="title"></ion-textarea>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10" class="ion-align-self-center" offset="1" >
+          <ion-button [disabled]="!todoForm.valid" (click)="createTodo()" expand="block" color="danger">Create Task <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+  
+</ion-content>

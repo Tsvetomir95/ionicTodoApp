@@ -1,0 +1,75 @@
+ion-content {
+  --background: url("https://cdn.pixabay.com/photo/2016/11/01/18/38/background-1789175_960_720.png");
+}
+
+ion-item {
+  margin-top: 10px;
+  --background: #fdcb01;
+  color: white;
+  border-radius: 10px;
+}
+
+.login__container {
+  background: #f6026098;
+  margin-top: 60px;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.login__massage {
+  position: relative;
+  bottom: 30px;
+  border-radius: 10px;
+  --background: #250448;
+  width: 250px;
+  // padding: 50px;
+}
+
+.check {
+  font-size: 120px;
+  color: #00e9e8;
+}
+
+ion-button {
+  width: 250px;
+  height: 50px;
+  position: relative;
+  top: 40px;
+}
+
+.check__logo {
+  position: relative;
+  top: -40px;
+  background: #fdcb01;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#signIn {
+  --background: #00e9e8;
+}
+#signUp {
+  --background: #250448;
+}
+
+#login_email {
+  background: #fdcb01;
+}
+
+ion-item:first-child {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+}
+
+ion-input > input {
+  background: #fdcb01;
+}

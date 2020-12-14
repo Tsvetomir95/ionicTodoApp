@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col  size="10" offset="1">
+        <form (ngSubmit)="signUp()" [formGroup]="signUpForm">
+        <ion-item>
+          <ion-label color="light" position="floating">First Name</ion-label>
+          <ion-input formControlName="firstName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light" position="floating">Last Name</ion-label>
+          <ion-input formControlName="lastName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light" position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light" position="floating">Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light" position="floating">Password Confirm</ion-label>
+          <ion-input formControlName="passwordConfirm" type="password"></ion-input>
+        </ion-item> 
+          <ion-button class="signUpButton" type="submit" expand="block" size="large" [disabled]="!(signUpForm.valid)"  >Sing Up <ion-icon slot="end" color="light" size="small" name="person-add"></ion-icon></ion-button>
+          <ion-item *ngIf="resData">
+            {{messageSuccess}}
+          </ion-item>
+        </form>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
