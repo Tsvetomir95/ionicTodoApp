@@ -33,13 +33,7 @@ export class LoginPage implements OnInit {
     }
     let password = this.loginForm.value.email;
     let email = this.loginForm.value.password;
-    this.auth.login(email, password).subscribe(resData => {
-      
-        this.router.navigateByUrl('/home');
-      
-    }, error => {
-      console.log(error);
-    });
+    this.auth.login(email, password);
 
   }
 
