@@ -42,21 +42,23 @@ export class RegisterPage implements OnInit {
     
   }
 
-  private async showAlert(message: string) {
-    const emailExixst = await this.alertController.create({
+  private async showAlert(message: string, header: string) {
+    const authFailed = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Authentication failed',
+      header: header,
       message: message,
       buttons: ['OK']
     });
-   await emailExixst.present();
+   await authFailed.present();
   }
 
   signUp() {
     if (this.signUpForm.value.password !== this.signUpForm.value.passwordConfirm ) {
+      this.showAlert('Password do not match!', 'Authentication failed!');
       return;
     }
     if (!this.signUpForm.valid) {
+      this.showAlert('Sorry authencation form is not valid!', 'Authentication failed!');
       return;
     }else {
       const email = this.signUpForm.value.email;
@@ -64,7 +66,7 @@ export class RegisterPage implements OnInit {
 
       this.authService.signUp(email, password).subscribe((resData: AuthResponse) => {
         let messageSuccess = "Successful registration"
-         
+        this.showAlert(messageSuccess, 'Authentication successful!');
         setTimeout(()=> {
           this.router.navigateByUrl('/login');
         },2000)
@@ -76,7 +78,7 @@ export class RegisterPage implements OnInit {
           message = 'This email address exists already!';
         }
 
-        this.showAlert(message);
+        this.showAlert(message, 'Authentication failed!');
         
       }
       );
